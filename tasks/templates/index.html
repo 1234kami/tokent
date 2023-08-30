@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoList</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<br>
+<h4 class="card-title" align="center">toDo list</h4>
+<div class="page-content page-container" id="page-content">
+    <div class="mb-3" align="center">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center" style="background:black">
+                <div class="card px-2" style="background:snow">
+                    <div class="card-body">
+                        <br>
+                        <div class="mb-3" align="left">
+                            {% for task in tasks %}
+                            <div class="mb-1">
+                                <div class="row container d-flex justify-content-center">
+                                    <div class="col-md-15">
+                                        <div class="card px-2">
+                                            <div class="card-body">
+                                                <h3 class="input-helper">{{ task.title }}</h3>
+                                                <br>
+                                                <p>{{ task.description }}<i
+                                                        class="input-helper"></i>
+                                                <p>{{ task.type }}<i
+                                                        class="input-helper"></i>
+                                                <p>{{ task.created_at }}<i
+                                                        class="input-helper"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+</head>
+<body>
+
+</body>
+</html>
