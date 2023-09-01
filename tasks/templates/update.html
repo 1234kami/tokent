@@ -14,20 +14,20 @@
         <div class="container">
             <div class="mb-3">
                 <input type="text" name="title" class="form-control" id="formGroupExampleInput"
-                       placeholder="Title">
+                       value="{{ data.title }}">
             </div>
             <div class="mb-3">
                 <input type="text" name="description" class="form-control"
                        id="formGroupExampleInput"
-                       placeholder="Description">
+                       value="{{ data.description }}" >
             </div>
             <div class="mb-3">
-                <input type="text" name="created_at" class="form-control" id="formGroupExampleInput"
-                       placeholder="Created_at">
+                <input type="date" name="created_at" class="form-control" id="formGroupExampleInput"
+                       value="{{ data.created_at }}">
             </div>
             <div class="mb-3">
                 <input type="text" name="type" class="form-control" id="formGroupExampleInput"
-                       placeholder="Type">
+                       value="{{ data.type }}">
             </div>
         </div>
         <div class="container" align="left">

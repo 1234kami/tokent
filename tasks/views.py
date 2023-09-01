@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import render
+from django.shortcuts import redirect
 from tasks.models import Task
 
 
@@ -7,6 +7,7 @@ def get_list(request):
     if request.method == 'GET':
         tasks = Task.objects.all()
         return render(request, 'index.html', {"tasks": tasks})
+
 
 def create_task(request):
     if request.method == 'POST':
@@ -17,6 +18,7 @@ def create_task(request):
         task = Task.objects.create(title=title, description=description, created_at=created_at, type=type)
         return redirect('index')
     return render(request, 'index.html')
+
 
 def update_task(request, id):
     if request.method == 'POST':
@@ -31,7 +33,11 @@ def update_task(request, id):
         task.type = type
         task.save()
         return redirect('index')
-    return render(request, 'update.html')
+    context = {
+        'data': Task.objects.get(id=id)
+    }
+    return render(request, 'update.html', context)
+
 
 def delete_task(request, id):
     if request.method == 'POST':

@@ -1,9 +1,9 @@
-# from django.urls import path
-# from tasks.views import get_list
-#
-# urlpatterns = [
-#     path('', get_list, name='list')
-# ]
+from django.urls import path
+from tasks.views import get_list
+
+urlpatterns = [
+    path('', get_list, name='list')
+]
 
 from django.urls import path
 from tasks.views import get_list, create_task, update_task, delete_task
