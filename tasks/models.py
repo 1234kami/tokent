@@ -12,6 +12,7 @@ class Task(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField(auto_created=True)
     type = models.CharField(max_length=25, choices=CHOICE_TYPE)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
